@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col"></div>
+    <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar artista...">
+</div>
+
+<!-- sec6 - 86 al 98 -->
+<!--
+<div class="card-columns m-5">
+  <div *ngFor="let artista of artistas" class="card">
+    <img [src]="artista.images[0].url" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{artista.name}}</h5>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- sec6 - 99  verificacion de imagen y pipe para manejar imagenes 
+      antes: <img [src]="artista.images[0].url" class="card-img-top" alt="...">
+
+      despues: <img [src]="artista.images | noimage" class="card-img-top" alt="...">
+-->
+<!--
+<div class="card-columns m-5">
+  <div *ngFor="let artista of artistas" class="card">
+     <img [src]="artista.images | noimage" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{artista.name}}</h5>
+    </div>
+  </div>
+</div>
+-->
+
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+
+<!-- sec 6 - 100 - componente tarjetas -->
+<app-tarjetas *ngIf="!loading" [items]="artistas"></app-tarjetas>
+
